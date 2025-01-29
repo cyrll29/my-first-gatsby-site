@@ -1,16 +1,23 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { 
     container, 
     header,
     navLinks,
     navLinkItem,
-    navLinkText
+    navLinkText,
+    siteTitle,
 } from './layout.module.css'
 
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
+
+
 const Layout = ({ pageTitle, children }: any) => {
+    const { title } = useSiteMetadata()
+
     return (
         <div className={container}>
+            <header className={siteTitle}>{title}</header>
             <nav>
                 <ul className={navLinks}>
                     <li className={navLinkItem}>
