@@ -18,8 +18,9 @@ const config: GatsbyConfig = {
       options: {
         name: `blogs`,
         path: `${__dirname}/blogs`
-      }
-    }
+      },
+    },
+    "gatsby-plugin-mdx",
   ],
 }
 
